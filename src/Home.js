@@ -1,12 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import ThoughtList from './ThoughtList';
 
 const Home = () => {
+    const [thoughts, setThoughts] = useState(null);
+
+    const[name, setName] = useState('tim');
+
+    const handleDelete = (id) => {
+        const newThoughts = thoughts.filter(thought => thought.id !== id);
+        setThoughts(newThoughts);
+
+    };
     
-    
+    useEffect (() => {
+        fetch('http://localhouse:8000/thoughts')
+        .then(res => {
+            return res.json();
+        })
+        .then((data) => {
+            setThoughts(data);
+        })
+    }, []);
+
     return ( 
         <div className= "home">
-            <h2>Homepage</h2>
-            
+            <ThoughtList thoughts={ thoughts } title="All Thoughts" handleDelete={ handleDelete }/>
+
         </div>
      );
 };
