@@ -3,31 +3,28 @@ import ThoughtList from './ThoughtList';
 
 const Home = () => {
     const [thoughts, setThoughts] = useState(null);
+    const [isPending, setIsPending] = useState(true);
 
-    const[name, setName] = useState('tim');
-
-    const handleDelete = (id) => {
-        const newThoughts = thoughts.filter(thought => thought.id !== id);
-        setThoughts(newThoughts);
-
-    };
-    
     useEffect (() => {
-        fetch('http://localhouse:8000/thoughts')
+        setTimeout(() => {
+            //we usually do not set a setTimeout in real world useage
+            fetch('http://localhost:8000/thoughts')
         .then(res => {
             return res.json();
         })
         .then((data) => {
             setThoughts(data);
-        })
+            setIsPending(false);
+        });
+        }, 1000);
     }, []);
 
     return ( 
         <div className= "home">
-            <ThoughtList thoughts={ thoughts } title="All Thoughts" handleDelete={ handleDelete }/>
-
+            { isPending && <div>Loading...</div> }
+            {thoughts && <ThoughtList thoughts={ thoughts } title="All Thoughts" />}
         </div>
      );
-};
+}
  
 export default Home;

@@ -1,4 +1,4 @@
-const ThoughtList = ({ thoughts, title, handleDelete }) => {
+const ThoughtList = ({ thoughts, title, }) => {
     // const thoughts = props.thoughts;
     // const title = props.title;
     
@@ -10,7 +10,6 @@ const ThoughtList = ({ thoughts, title, handleDelete }) => {
                 <div className="thought-preview" key={thought.id}>
                     <h2>{ thought.title }</h2>
                     <p>by: { thought.author }</p>
-                    <button onClick={() => handleDelete(thought.id)}>delete thought</button>
                 </div>
             ))}
         </div>
