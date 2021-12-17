@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ThoughtList = ({ thoughts, title, }) => {
     // const thoughts = props.thoughts;
     // const title = props.title;
@@ -8,8 +10,10 @@ const ThoughtList = ({ thoughts, title, }) => {
             <h2>{ title }</h2>
             {thoughts.map((thought) => (
                 <div className="thought-preview" key={thought.id}>
-                    <h2>{ thought.title }</h2>
-                    <p>by: { thought.author }</p>
+                    <Link to={`/thoughts/${thought.id}`}>
+                        <h2>{ thought.title }</h2>
+                        <p>by: { thought.author }</p>
+                    </Link>
                 </div>
             ))}
         </div>

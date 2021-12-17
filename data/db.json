@@ -1,16 +1,34 @@
 {
-    "thoughts": [
-        {
-            "title": "First Thought",
-            "body": "This tutorial has done in 4 hours what I felt lost on for two weeks.  Pluralsight is trash!",
-            "author": "Tim",
-            "id": 1
-        },
-        {
-            "title": "I second this",
-            "body": "Tien popped in with an alleyoup(sp) with a codeAcademy link to help with my special learning style that seems to match his.  Mad respect!",
-            "author": "Tehm",
-            "id": 2
-        }
-    ]
+  "thoughts": [
+    {
+      "title": "First Thought",
+      "body": "This tutorial has done in 4 hours what I felt lost on for two weeks.  Pluralsight is trash!",
+      "author": "Tim",
+      "id": 1
+    },
+    {
+      "title": "I second this",
+      "body": "Tien popped in with an alleyoup(sp) with a codeAcademy link to help with my special learning style that seems to match his.  Mad respect!",
+      "author": "Tehm",
+      "id": 2
+    },
+    {
+      "title": "3 Days Later",
+      "body": "I am on chapter 28 of the net ninja video tutorial.  Yes I am slow but steady she goes while I absorb new knowledge and apply it in a way I understand it!",
+      "author": "tim",
+      "id": 3
+    },
+    {
+      "title": "Button",
+      "body": "This is a test of the button state change.",
+      "author": "tim",
+      "id": 4
+    },
+    {
+      "title": "History Hook",
+      "body": "Let's see if this reroutes us to where we direct the history push tells us to go.",
+      "author": "tim",
+      "id": 5
+    }
+  ]
 }

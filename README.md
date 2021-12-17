@@ -1,3 +1,7 @@
 # Getting Started with My First Create React App
 
-This is a project in progress following a tutorial by Net Ninja
+Thank you Net Ninja for the tutorial that had me complete my first App.
+
+It took me 3 full days of coding line by line from scratch.  I decided to NOT use the files he provided as I have to manually do things for it to absorb properly!
+
+

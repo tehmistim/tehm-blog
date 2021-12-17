@@ -4,6 +4,8 @@ import Home from './Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Create from './Create';
 import About from './About';
+import ThoughtDetails from './ThoughtDetails';
+import NotFound from './NotFound';
 
 
 
@@ -24,6 +26,12 @@ function App() {
               </Route>
               <Route path="/about">
                 <About />
+              </Route>
+              <Route path="/thoughts/:id">
+                <ThoughtDetails />
+              </Route>
+              <Route path="*">
+                <NotFound />
               </Route>
           </Switch>
         </div>
