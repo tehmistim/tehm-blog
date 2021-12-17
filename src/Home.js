@@ -1,26 +1,15 @@
-import { useState, useEffect } from 'react';
 import ThoughtList from './ThoughtList';
+import useFetch from './useFetch';
 
 const Home = () => {
-    const [thoughts, setThoughts] = useState(null);
-    const [isPending, setIsPending] = useState(true);
+    const { data: thoughts, isPending, error} = useFetch('http://localhost:8000/thoughts');
+    //custom hook js
 
-    useEffect (() => {
-        setTimeout(() => {
-            //we usually do not set a setTimeout in real world useage
-            fetch('http://localhost:8000/thoughts')
-        .then(res => {
-            return res.json();
-        })
-        .then((data) => {
-            setThoughts(data);
-            setIsPending(false);
-        });
-        }, 1000);
-    }, []);
+
 
     return ( 
         <div className= "home">
+            { error && <div>{ error }</div> }
             { isPending && <div>Loading...</div> }
             {thoughts && <ThoughtList thoughts={ thoughts } title="All Thoughts" />}
         </div>
